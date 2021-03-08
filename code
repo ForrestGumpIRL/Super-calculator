@@ -32,25 +32,19 @@ def abilitiesList():
     print("- = Subtraction")
     print("* = Multiplication")
     print("/ = Division")
-    print("^ = Powers")
     print("/- = Square Roots ")
-    print("! = Factorials (Input Cannot Be Negative)")
+    print("^ = Powers")
+    print("! = Factorials (The integers of all numbers up to that(example: 5 = 1*2*3*4*5 = 120))")
     print("Abs = Absolute Value")
-    print("d/r = Degrees To Radians")
+    print("d/r = Degrees To Radians(180 degrees = 3,14 radians) ")
     print("r/d = Radians To Degrees")
     print("pi = Returns PI")
-    print("e = Returns 'e'")
+    print("e = Returns 'e'(Eulers number)")
     print("M+ = Save input to memory")
     print("MR = Recall Memory")
     print("M- = Clear Memory")
-    print("sin = Sine")
-    print("cos = Cosine")
-    print("tan = Tangent")
-    print("asin = Arc Sine")
-    print("acos = Arc Cosine")
-    print("atan = Arc Tangent")
-    print("log10 = Log(10) of Input")
-    print("log = Returns The Apropriate Log of the Input (input1 is the log power)")
+    print("log = Returns The Apropriate Log of the Input (input1 is the log power)(opposite of exponentiation(tells what exponent is needed to make a number(example: first (base) = 2, second (end sum) = 8, then the power is 3, because 2*2*2 = 8)))")
+    print("log10 = Log(10) of the Input, and the common logarithm (the base is automatically 10, which makes the example base = 10, first = 100, then the power is 2, because 10*10 = 100)")
     print("rand = Returns A Random Number Between 0 and 1")
     print("randint = Returns A Random Number Between The Two Inputs")
     print("")
@@ -200,35 +194,17 @@ elif operator == "r/d":
 elif operator == "M+":
     memStore = num1
     print("Number Stored")
-elif operator == "sin":
-    output = math.sin(num1)
-    print("Your Answer: "+str(output))
-elif operator == "cos":
-    output = math.cos(num1)
-    print("Your Answer: "+str(output))
-elif operator == "tan":
-    output = math.tan(num1)
-    print("Your Answer: "+str(output))
-elif operator == "asin":
-    output = math.asin(num1)
-    print("Your Answer: "+str(output))
-elif operator == "acos":
-    output = math.acos(num1)
-    print("Your Answer: "+str(output))
-elif operator == "atan":
-    output = math.atan(num1)
-    print("Your Answer: "+str(output))
 elif operator == "log10":
     output = math.log10(num1)
     print("Your Answer: "+str(output))
 elif operator == "log":
     output = math.log(num2, num1)
     print("Your Answer: "+str(output))
+
+elif operator == "log2":
+    output = math.log2(num1)
+    print("Yor Answer: "+str(output))
+
 elif operator == "randint":
     output = random.randint(num1, num2)
     print("Your Answer: "+str(output))
-
-
-
-
-
