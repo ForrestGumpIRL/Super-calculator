@@ -1,0 +1,234 @@
+
+import math
+import random
+import time
+
+print("SUPER ADVANCED CALCULATOR(Go to my Github page to learn more: https://github.com/HakermanOfficial)")
+
+def askForNumInput(textPrompt):
+    
+    convertedNum = math.nan
+
+    
+    while True:
+        num = input(textPrompt)
+        try:
+            
+            float(num)
+        except ValueError:
+            
+            print("ERROR: Syn: Invalid Num")
+        else:
+            
+            convertedNum = float(num)
+            break
+    return convertedNum
+
+
+
+
+def abilitiesList():
+    print("+ = Addition")
+    print("- = Subtraction")
+    print("* = Multiplication")
+    print("/ = Division")
+    print("^ = Powers")
+    print("/- = Square Roots ")
+    print("! = Factorials (Input Cannot Be Negative)")
+    print("Abs = Absolute Value")
+    print("d/r = Degrees To Radians")
+    print("r/d = Radians To Degrees")
+    print("pi = Returns PI")
+    print("e = Returns 'e'")
+    print("M+ = Save input to memory")
+    print("MR = Recall Memory")
+    print("M- = Clear Memory")
+    print("sin = Sine")
+    print("cos = Cosine")
+    print("tan = Tangent")
+    print("asin = Arc Sine")
+    print("acos = Arc Cosine")
+    print("atan = Arc Tangent")
+    print("log10 = Log(10) of Input")
+    print("log = Returns The Apropriate Log of the Input (input1 is the log power)")
+    print("rand = Returns A Random Number Between 0 and 1")
+    print("randint = Returns A Random Number Between The Two Inputs")
+    print("")
+
+    print("")
+    print("Type 'help' for a list of abilities")
+
+
+
+
+
+while True:
+    print("TIPS: Type 'help' for more info!") 
+    time.sleep(1)
+    operator = input("What operation do you want to perform? ")
+    
+    if operator == "help":
+        abilitiesList()
+    elif operator == "pi":
+        def calcPi(limit):  
+            """
+            Prints out the digits of PI
+            until it reaches the given limit
+            """
+
+            q, r, t, k, n, l = 1, 0, 1, 1, 3, 3
+
+            decimal = limit
+            counter = 0
+
+            while counter != decimal + 1:
+                    if 4 * q + r - t < n * t:
+                            
+                            yield n
+                            
+                            if counter == 0:
+                                    yield '.'
+                            
+                            if decimal == counter:
+                                    print('')
+                                    break
+                            counter += 1
+                            nr = 10 * (r - n * t)
+                            n = ((10 * (3 * q + r)) // t) - 10 * n
+                            q *= 10
+                            r = nr
+                    else:
+                            nr = (2 * q + r) * l
+                            nn = (q * (7 * k) + 2 + (r * l)) // (t * l)
+                            q *= k
+                            t *= l
+                            l += 2
+                            k += 1
+                            n = nn
+                            r = nr
+
+
+        def main():  
+
+            
+            pi_digits = calcPi(int(input(
+                "Enter the number of decimals to calculate to: ")))
+
+            i = 0
+
+            
+            for d in pi_digits:
+                    print(d, end='')
+                    i += 1
+                    if i == 40:
+                        print("")
+                        i = 0
+
+        if __name__ == '__main__':
+            main()
+    elif operator == "e":
+        print(math.e)
+
+    elif operator == "MR":
+        print(str(memStore))
+    elif operator == "M-":
+        memStore = "Empty"
+        print("Memory Cleared")
+    elif operator == "rand":
+        print(random.random())
+        
+    elif operator == "+" or operator == "-" or operator == "*" or operator == "/" or operator == "^" or operator == "/-" or operator == "!" or operator == "Abs" or operator == "d/r" or operator == "r/d" or operator == "M+" or operator == "M-" or operator == "MR" or operator == "sin" or operator == "cos" or operator == "tan" or operator == "asin" or operator == "acos" or operator == "atan" or operator == "log10" or operator == "log" or operator == "randint":
+        break
+    else:
+        print("ERROR: Invalid Operator")
+
+
+
+
+while True:
+    num1 = askForNumInput("First Number? ")
+   
+    if (operator == "asin" or operator == "acos") and (num1 > 1 or num1 < -1):
+        print("ERROR: Math: 'asin' and 'acos' commands only accept inputs in range -1 to +1")
+    elif operator == "!" and num1 < 0:
+        print("ERROR: Math: Factorials only accept inputs > 0")
+    else:
+        break
+
+
+if not (operator=="/-" or operator=="!" or operator=="Abs" or operator=="d/r" or operator=="r/d" or operator=="M+" or operator=="sin" or operator=="cos" or operator=="tan" or operator=="asin" or operator=="acos" or operator=="atan" or operator=="log10"):
+    
+    while True:
+        num2 = askForNumInput("Second Number? ")
+        
+        if  operator == "/" and num2 == "0":
+            print("ERROR: Math: Canot divide by 0!")
+        else:
+            break
+
+
+if operator == "+":
+    output = num1 + num2
+    print("Your Answer: "+str(output))
+elif operator == "-":
+    output = num1 - num2
+    print("Your Answer: "+str(output))
+elif operator == "*":
+    output = num1 * num2
+    print("Your Answer: "+str(output))
+elif operator == "/":
+    output = num1 / num2
+    print("Your Answer: "+str(output))
+elif operator == "^":
+    output = math.pow(num1,num2)
+    print("Your Answer: "+str(output))
+elif operator == "/-":
+    output = math.sqrt(num1)
+    print("Your Answer: "+str(output))
+elif operator == "!":
+    output = math.factorial(num1)
+    print("Your Answer: "+str(output))
+elif operator == "Abs":
+    output = math.fabs(num1)
+    print("Your Answer: "+str(output))
+elif operator == "d/r":
+    output = math.radians(num1)
+    print("Your Answer: "+str(output))
+elif operator == "r/d":
+    output = math.degrees(num1)
+    print("Your Answer: "+str(output))
+elif operator == "M+":
+    memStore = num1
+    print("Number Stored")
+elif operator == "sin":
+    output = math.sin(num1)
+    print("Your Answer: "+str(output))
+elif operator == "cos":
+    output = math.cos(num1)
+    print("Your Answer: "+str(output))
+elif operator == "tan":
+    output = math.tan(num1)
+    print("Your Answer: "+str(output))
+elif operator == "asin":
+    output = math.asin(num1)
+    print("Your Answer: "+str(output))
+elif operator == "acos":
+    output = math.acos(num1)
+    print("Your Answer: "+str(output))
+elif operator == "atan":
+    output = math.atan(num1)
+    print("Your Answer: "+str(output))
+elif operator == "log10":
+    output = math.log10(num1)
+    print("Your Answer: "+str(output))
+elif operator == "log":
+    output = math.log(num2, num1)
+    print("Your Answer: "+str(output))
+elif operator == "randint":
+    output = random.randint(num1, num2)
+    print("Your Answer: "+str(output))
+
+
+
+
+
